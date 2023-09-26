@@ -1,19 +1,19 @@
 const input_layer_0 = `
-|  TAB |  Q  |  W  |  F  |  P  |  B  |         |  J  |  L   |  U  |  Y  |  '  |  TAB |
-| CTRL |  A  |  R  |  S  |  T  |  G  |         |  M  |  N   |  E  |  I  |  O  | CTRL |
-| SHFT |  Z  |  X  |  C  |  D  |  V  |         |  K  |  H   |  ,  |  .  |  /  | SHFT |
+|   |  Q  |  W  |  F  |  P  |  B  |    ---    |  J  |  L   |  U  |  Y  |  '  |   |
+|   |  A  |  R  |  S  |  T  |  G  |    ---    |  M  |  N   |  E  |  I  |  O  |   |
+|   |  Z  |  X  |  C  |  D  |  V  |    ---    |  K  |  H   |  ,  |  .  |  /  |   |
 | CMD | LWR | SPC |               | ENT | RSE  | ALT |
 `;
 const input_layer_1 = `
-|  TAB | ESC |  7  |  8  |  9  |    |          |     |     |      |    |  BKSP  |  TAB |
-| CTRL | TAB |  4  |  5  |  6  |    |          |     | LFT | DWN  | UP |  RGT   | CTRL |
-| SHFT |  0  |  1  |  2  |  3  |    |          |     |     |      |    |        | SHFT |
+|   | ESC |  7  |  8  |  9  |    |          |     |     |      |    |  BKSP  |   |
+|   | TAB |  4  |  5  |  6  |    |          |     | LFT | DWN  | UP |  RGT   |   |
+|   |  0  |  1  |  2  |  3  |    |          |     |     |      |    |        |   |
 | GUI  |    |     |               | SHFT|  |  |
 `;
 const input_layer_2 = `
-|  TAB |  \`  |  ~  |     |     | |              |     |  &  |  *  |  (  |  )  |  TAB |
-| CTRL | CTRL |  $  |  %  |  ^  | |             |  -  |  =  |  [  |  ]  |  \  | CTRL |
-| SHFT | SHFT |  !  |  @  |  #  | |             |  _  |  +  |  {  |  }  | "|" | SHFT |
+|   |  \`  |  ~  |     |     | |              |     |  &  |  *  |  (  |  )  |   |
+|   | CTRL |  $  |  %  |  ^  | |             |  -  |  =  |  [  |  ]  |  \  |   |
+|   | SHFT |  !  |  @  |  #  | |             |  _  |  +  |  {  |  }  | "|" |   |
 | GUI |     | SPC |               | ENT |     | ALT |
 `;
 
@@ -76,6 +76,7 @@ const keyMap = {
   "}": "&kp RBRC ",
   _PIPE_: "&kp PIPE ",
   "~": "&kp TILDE ",
+  "---": "",
 };
 
 function transformInput(input) {
@@ -105,8 +106,15 @@ function transformInput(input) {
       .replace('"|"', "_PIPE_")
       .split("|")
       .map((k) => k.trim())
-      .filter((k) => k.length > 0);
+      .filter((k) => k !== "---");
+    // .filter((k) => k.length > 0);
+
+    // remove 1st and last element
+    keys.shift();
+    keys.pop();
+
     keys.forEach((key) => {
+      console.log("\x1b[93m%s\x1b[0m", "KEY:", key);
       output += keyMap[key] || `&kp ${key}   `;
     });
     output += "     ";
@@ -120,5 +128,5 @@ function transformInput(input) {
   return output;
 }
 
-const transformedOutput = transformInput(input_layer_0);
+const transformedOutput = transformInput(input_layer_2);
 console.log(transformedOutput);
