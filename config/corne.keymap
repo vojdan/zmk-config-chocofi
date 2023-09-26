@@ -54,8 +54,8 @@ bindings = <
 bindings = <
       &kp GRAVE &kp TILDE &kp AMPS &kp KP_MULTIPLY &kp LPAR &kp RPAR      
       &kp LCTRL &kp DLLR &kp PRCNT &kp CARET &kp MINUS &kp EQUAL &kp LBKT &kp RBKT      
-      &kp LSHFT &kp EXCL &kp AT &kp HASH &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp "   &kp "        
-      &kp LGUI &kp SPACE &kp RET &kp RALT   
+      &kp LSHFT &kp EXCL &kp AT &kp HASH &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE      
+      &kp LGUI &kp SPACE &kp RET &kp RALT      
 >;
 };
 };
