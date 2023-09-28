@@ -5,15 +5,15 @@ const input_layer_0 = `
 | CMD | LWR | SPC |               | ENT | RSE  | ALT |
 `;
 const input_layer_1 = `
-|   | ESC |  7  |  8  |  9  |    |          |     |     |      |    |  BKSP  |   |
-|   | TAB |  4  |  5  |  6  |    |          |     | LFT | DWN  | UP |  RGT   |   |
-|   |  0  |  1  |  2  |  3  |    |          |     |     |      |    |        |   |
+|   | ESC |  7  |  8  |  9  |    |    ---    |     |     |      |    |  BKSP  |   |
+|   | TAB |  4  |  5  |  6  |    |    ---    |     | LFT | DWN  | UP |  RGT   |   |
+|   |  0  |  1  |  2  |  3  |    |    ---    |     |     |      |    |        |   |
 | GUI  |    |     |               | SHFT|  |  |
 `;
 const input_layer_2 = `
-|   |  \`  |  ~  |     |     | |              |     |  &  |  *  |  (  |  )  |   |
-|   | CTRL |  $  |  %  |  ^  | |             |  -  |  =  |  [  |  ]  |  \  |   |
-|   | SHFT |  !  |  @  |  #  | |             |  _  |  +  |  {  |  }  | "|" |   |
+|   |  \`  |  ~  |     |     | |    ---    |     |  &  |  *  |  (  |  )  |   |
+|   | CTRL |  $  |  %  |  ^  | |    ---    |  -  |  =  |  [  |  ]  |  \  |   |
+|   | SHFT |  !  |  @  |  #  | |    ---    |  _  |  +  |  {  |  }  | "|" |   |
 | GUI |     | SPC |               | ENT |     | ALT |
 `;
 
@@ -52,7 +52,7 @@ const keyMap = {
   RGT: "&kp RIGHT ",
   SHFT: "&kp LSHFT ",
   GUI: "&kp LGUI ",
-  "": "&trans ",
+  "": "&none ",
   "!": "&kp EXCL ",
   "@": "&kp AT ",
   "#": "&kp HASH ",
