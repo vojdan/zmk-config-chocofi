@@ -2,19 +2,19 @@ const input_layer_0 = `
 |   |  Q  |  W  |  F  |  P  |  B  |    ---    |  J  |  L   |  U  |  Y  |  '  |   |
 |   |  A  |  R  |  S  |  T  |  G  |    ---    |  M  |  N   |  E  |  I  |  O  |   |
 |   |  Z  |  X  |  C  |  D  |  V  |    ---    |  K  |  H   |  ,  |  .  |  /  |   |
-| CMD | LWR | SPC |               | ENT | RSE  | ALT |
+                | CMD | LWR | SPC |    ---    | ENT | RSE  | ALT |
 `;
 const input_layer_1 = `
-|   | ESC |  7  |  8  |  9  |    |    ---    |     |     |      |    |  BKSP  |   |
-|   | TAB |  4  |  5  |  6  |    |    ---    |     | LFT | DWN  | UP |  RGT   |   |
-|   |  0  |  1  |  2  |  3  |    |    ---    |     |     |      |    |        |   |
-| GUI  |    |     |               | SHFT|  |  |
+|   | ESC |  7  |  8  |  9  |     |    ---    |     |     |      |    |  BKSP  |   |
+|   | TAB |  4  |  5  |  6  |     |    ---    |     | LFT | DWN  | UP |  RGT   |   |
+|   |  0  |  1  |  2  |  3  |     |    ---    |     |     |      |    |        |   |
+                | GUI |     |     |    ---    | SHFT|     |      |
 `;
 const input_layer_2 = `
-|   |  \`  |  ~  |     |     | |    ---    |     |  &  |  *  |  (  |  )  |   |
-|   | CTRL |  $  |  %  |  ^  | |    ---    |  -  |  =  |  [  |  ]  |  \  |   |
-|   | SHFT |  !  |  @  |  #  | |    ---    |  _  |  +  |  {  |  }  | "|" |   |
-| GUI |     | SPC |               | ENT |     | ALT |
+|  |  \`  |  ~  |     |     |     |    ---    |     |  &  |  *  |  (  |  )  |   |
+|  | CTRL |  $  |  %  |  ^  |     |    ---    |  -  |  =  |  [  |  ]  |  \  |   |
+|  | SHFT |  !  |  @  |  #  |     |    ---    |  _  |  +  |  {  |  }  | "|" |   |
+                | GUI |     | SPC |    ---    | ENT |     | ALT |
 `;
 
 const keyMap = {
