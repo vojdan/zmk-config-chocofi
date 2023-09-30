@@ -79,14 +79,10 @@ const keyMap = {
   "---": "",
 };
 
-function transformInput(input) {
+function transformInput(layerName, input) {
   const lines = input.trim().split("\n");
   let output = `
-/ {
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
+${layerName} {
 // ------------------------------------------------------------------------
 `;
 
@@ -114,7 +110,7 @@ function transformInput(input) {
     keys.pop();
 
     keys.forEach((key) => {
-      console.log("\x1b[93m%s\x1b[0m", "KEY:", key);
+      // console.log("\x1b[93m%s\x1b[0m", "KEY:", key);
       output += keyMap[key] || `&kp ${key}   `;
     });
     output += "     ";
@@ -123,10 +119,39 @@ function transformInput(input) {
 
   output += `>;
 };
-}`;
+
+
+
+`;
 
   return output;
 }
 
-const transformedOutput = transformInput(input_layer_2);
-console.log(transformedOutput);
+const intro = `
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+
+`;
+const outro = `
+};
+};
+`;
+
+console.log(intro);
+console.log(transformInput("default_layer", input_layer_0));
+console.log(transformInput("lower_layer", input_layer_1));
+console.log(transformInput("raise_layer", input_layer_2));
+console.log(outro);
