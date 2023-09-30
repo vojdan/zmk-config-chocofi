@@ -28,6 +28,7 @@ const keyMap = {
   ",": "&kp COMMA ",
   ".": "&kp DOT ",
   "/": "&kp FSLH ",
+  "?": "&kp QUESTION ",
   TAB: "&kp TAB ",
   1: "&kp N1 ",
   2: "&kp N2 ",
